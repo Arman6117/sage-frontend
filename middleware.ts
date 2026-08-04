@@ -46,12 +46,14 @@ export async function middleware(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   // Redirect unauthenticated users to login, except for auth pages
+  const protectedRoutes =['/dashboard', '/collections', '/settings', '/chat']
   const isAuthRoute = request.nextUrl.pathname.startsWith("/auth")
-  const isPublicAsset =
-    request.nextUrl.pathname.startsWith("/_next") ||
-    request.nextUrl.pathname.startsWith("/favicon.ico")
+const isProtectedRoute = protectedRoutes.some(route =>
+  request.nextUrl.pathname.startsWith(route)
+)
+                
 
-  if (!user && !isAuthRoute && !isPublicAsset) {
+  if (!user  && isProtectedRoute) {
     const loginUrl = request.nextUrl.clone()
     loginUrl.pathname = "/auth/login"
     return NextResponse.redirect(loginUrl)
