@@ -1,10 +1,11 @@
 import { AuthLayout } from "@/components/auth/auth-layout"
-import { AuthForm } from "@/components/auth/auth-form"
+import SignupForm from "@/components/auth/signup-form"
 
 export default function SignupPage() {
   return (
     <AuthLayout>
-      <AuthForm type="signup" loginUrl="/auth/login" signupUrl="/auth/signup" />
+      <SignupForm />
     </AuthLayout>
   )
 }
+

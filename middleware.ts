@@ -62,7 +62,7 @@ const isProtectedRoute = protectedRoutes.some(route =>
   // Redirect logged-in users away from auth pages
   if (user && isAuthRoute) {
     const homeUrl = request.nextUrl.clone()
-    homeUrl.pathname = "/"
+    homeUrl.pathname = "/dashboard"
     return NextResponse.redirect(homeUrl)
   }
 

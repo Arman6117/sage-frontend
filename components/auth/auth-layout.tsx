@@ -44,7 +44,7 @@ export function AuthLayout({ children }: AuthLayoutProps) {
       {/* Footer Links */}
       <footer className="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 text-center text-xs text-muted-foreground/70 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border/20">
         <p>© {new Date().getFullYear()} Sage. All rights reserved.</p>
-        <div className="flex items-center gap-6">
+        {/* <div className="flex items-center gap-6">
           <Link href="#" className="hover:text-foreground transition-colors">
             Privacy Policy
           </Link>
@@ -54,7 +54,7 @@ export function AuthLayout({ children }: AuthLayoutProps) {
           <Link href="#" className="hover:text-foreground transition-colors">
             Help & Support
           </Link>
-        </div>
+        </div> */}
       </footer>
     </div>
   )
